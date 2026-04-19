@@ -6,8 +6,18 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    dotnet6_linux:
+      imageName: "ubuntu-latest"
+      dotnetVersion: "6.0.x"
+    dotnet8_windows:
+      imageName: "windows-latest"
+      dotnetVersion: "8.0.x"
+  maxParallel: 2
+  
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(imageName)
 
 variables:
   buildConfiguration: 'Release'
