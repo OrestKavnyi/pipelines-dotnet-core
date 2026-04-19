@@ -32,7 +32,7 @@ steps:
     packageType: 'sdk'
     version: '$(dotnetVersion)'
 
-- script: Write-Output "Parameter value is ${{ parameters.myParam }}"
+- script: echo "Parameter value is ${{ parameters.myParam }}"
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
